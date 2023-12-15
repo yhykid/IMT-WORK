@@ -46,15 +46,13 @@ path = download(dataset_url, path, kind="zip", replace=True)
 
 
 
-**Image classification demo**
+**Loss Curve**
 
-Right click on the image below and save as `dog.jpg`.
 
-<p align="left">
-  <img src="https://user-images.githubusercontent.com/8156835/210049681-89f68b9f-eb44-44e2-b689-4d30c93c6191.jpg" width=360 />
+<p align="center">
+  <img src="https://github.com/ChaselLau666/Image-Measurement-Technology-Work/blob/main/img/loss.png?raw=true
+" width=360 />
 </p>
-
-Classify the downloaded image with a pretrained SoTA model:
 
 
 ## Training
