@@ -44,11 +44,7 @@ path = "./"
 path = download(dataset_url, path, kind="zip", replace=True)
 ```
 
-```shell
-# Validate its accuracy
-python validate.py --model=swin_tiny --pretrained --dataset=imagenet --val_split=validation
-# {'Top_1_Accuracy': 0.80824, 'Top_5_Accuracy': 0.94802, 'loss': 1.7331367141008378}
-```
+
 
 **Image classification demo**
 
@@ -60,11 +56,6 @@ Right click on the image below and save as `dog.jpg`.
 
 Classify the downloaded image with a pretrained SoTA model:
 
-```shell
-python infer.py --model=swin_tiny --image_path='./dog.jpg'
-# {'Labrador retriever': 0.5700152, 'golden retriever': 0.034551315, 'kelpie': 0.010108651, 'Chesapeake Bay retriever': 0.008229004, 'Walker hound, Walker foxhound': 0.007791956}
-```
-The top-1 prediction result is labrador retriever, which is the breed of this cut dog.
 
 ## Training
 
