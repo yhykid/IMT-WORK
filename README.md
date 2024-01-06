@@ -1,3 +1,4 @@
+
 <div align="center" markdown>
 
 # 图像测量技术实验作业
@@ -23,7 +24,10 @@ The version of  **MindSpore is 2.1.1**.
     >>> conda create -n ms python=3.8
     # Install mindspore 2.1.1
     >>> conda install mindspore=2.1.1 -c mindspore -c conda-forge
-    ```
+    #install rely
+    >>> pip install tqdm
+    >>> pip install pyyaml
+    ```   
     See [Installation](https://www.mindspore.cn/install/) for details
 
 
@@ -126,7 +130,8 @@ The mindcv module provides relevant definition components. You only need to defi
 
     ```shell
     # training
-    python train1.py --config /home/xiangchengliu/mindcv/configs/swintransformer/swin_tiny.yaml --data_dir /home/xiangchengliu/mindcv/dataset  --distribute False
+    python train.py --config /home/xiangchengliu/Videos/Image-Measurement-Technology-Work/swin_transformer/configs/swintransformer/swin_tiny.yaml（configs的绝对路径） --data_dir /home/xiangchengliu/Videos/Image-Measurement-Technology-Work/swin_transformer/dataset（datasets的绝对路径） --distribute False
+
     ```
     During training, you need to specify training parameters and data sets.
     The above path is an absolute path
@@ -143,22 +148,20 @@ pip install mindinsight
 In order to view the loss changes during training, you can run
 
 ```pycon
-mindinsight start --summary-base-dir=./summary_dir
+mindinsight start --summary-base-dir=/home/xiangchengliu/Videos/Image-Measurement-Technology-Work/swin_transformer/mindinsight （mindinsight的绝对路径）--port=8091
+
 ```
 
 ## References
 
-Currently, MindCV supports the model families listed below. More models with pre-trained weights are under development and will be released soon.
 
 <details open markdown>
-<summary> Supported models </summary>
+<summary> Paper </summary>
 
-* ResNet (v1b/v1.5) - https://arxiv.org/abs/1512.03385
 * Vision Transformer (ViT) - https://arxiv.org/abs/2010.11929
 * Swin Transformer - https://arxiv.org/abs/2103.14030
 
 
-Please see [configs](./configs) for the details about model performance and pretrained weights.
 
 </details>
 
@@ -170,28 +173,15 @@ Please see [configs](./configs) for the details about model performance and pret
 * Augmentation
     * [AutoAugment](https://arxiv.org/abs/1805.09501)
     * [RandAugment](https://arxiv.org/abs/1909.13719)
-    * [Repeated Augmentation](https://openaccess.thecvf.com/content_CVPR_2020/papers/Hoffer_Augment_Your_Batch_Improving_Generalization_Through_Instance_Repetition_CVPR_2020_paper.pdf)
     * RandErasing (Cutout)
     * CutMix
     * MixUp
     * RandomResizeCrop
     * Color Jitter, Flip, etc
 * Optimizer
-    * Adam
     * AdamW
-    * [Lion](https://arxiv.org/abs/2302.06675)
-    * Adan (experimental)
-    * AdaGrad
-    * LAMB
-    * Momentum
-    * RMSProp
-    * SGD
-    * NAdam
 * LR Scheduler
     * Warmup Cosine Decay
-    * Step LR
-    * Polynomial Decay
-    * Exponential Decay
 * Regularization
     * Weight Decay
     * Label Smoothing
@@ -199,11 +189,6 @@ Please see [configs](./configs) for the details about model performance and pret
     * Dropout (depends on networks)
 * Loss
     * Cross Entropy (w/ class weight and auxiliary logit support)
-    * Binary Cross Entropy  (w/ class weight and auxiliary logit support)
-    * Soft Cross Entropy Loss (automatically enabled if mixup or label smoothing is used)
-    * Soft Binary Cross Entropy Loss (automatically enabled if mixup or label smoothing is used)
-* Ensemble
-    * Warmup EMA (Exponential Moving Average)
 
 </details>
 
@@ -218,17 +203,5 @@ MindCV is an open-source project jointly developed by the MindSpore team, Xidian
 Sincere thanks to all participating researchers and developers for their hard work on this project.
 We also acknowledge the computing resources provided by [OpenI](https://openi.pcl.ac.cn/).
 
-## Citation
-
-If you find this project useful in your research, please consider citing:
-
-```latex
-@misc{MindSpore Computer Vision 2022,
-    title={{MindSpore Computer Vision}:MindSpore Computer Vision Toolbox and Benchmark},
-    author={MindSpore Vision Contributors},
-    howpublished = {\url{https://github.com/mindspore-lab/mindcv/}},
-    year={2022}
-}
-```
 # Image-Measurement-Technology-Work
 Use mindsopre framework and mindcv library to complete the implementation of Swin Transformer algorithm
